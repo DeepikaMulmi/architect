@@ -1,0 +1,87 @@
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+
+#qodef-back-to-top {
+	position: fixed;
+	height: 70px;
+	right: 30px;
+	bottom: 40px;
+	margin: 0;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10000;
+	
+	.qodef-back-to-top-icon {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		overflow: hidden;
+		transition: $color-transition, $background-color-transition, $border-color-transition;
+		
+		* {
+			display: block;
+			line-height: inherit;
+		}
+	}
+	&.qodef--predefined {
+		svg {
+			display: block;
+			width: 70px;
+			height: 35px;
+			fill: currentColor;
+			transform: rotate(-90deg);
+
+			> g:last-child {
+
+				> g {
+
+					> line {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 35;
+						transition: .6s ease;
+					}
+				}
+			}
+
+			&:hover {
+
+				> g:last-child {
+
+					> g {
+
+						> line {
+							stroke-dashoffset: 70;
+
+							&:last-child {
+								transition-delay: .15s;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&.qodef--off {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.15s ease, visibility .0s .15s;
+	}
+	
+	&.qodef--on {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s ease;
+	}
+
+	&:hover {
+		color: initial;
+	}
+}
+
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */

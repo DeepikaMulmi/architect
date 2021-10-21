@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Numbered Text shortcode styles
+   ========================================================================== */
+
+.qodef-numbered-text {
+    text-align: center;
+
+    .qodef-m-number {
+        font-family: $meta-font;
+        font-size: 140px;
+        font-weight: 700;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #e8ebe0;
+    }
+
+    .qodef-m-title {
+        margin: 8px 0 0;
+    }
+
+    .qodef-m-text {
+        margin: 9px 0 0 0;
+    }
+
+    .qodef-m-button {
+        @include qodefMetaStyle($color: inherit);
+        margin: 17px 0 0 0;
+        letter-spacing: .3em;
+
+        &:after {
+            bottom: -3px;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Full Screen Menu Opener styles
+   ========================================================================== */
+
+.qodef-fullscreen-menu-opener {
+
+	&.qodef-source--predefined {
+		
+		& {
+
+			.qodef--close {
+
+				.qodef-m-lines {
+					width: 26px;
+					height: 18px;
+
+					&:after,
+					&:before {
+						content: '';
+						position: absolute;
+						display: block;
+						top: calc(50% - 1px);
+						width: 100%;
+						height: 1px;
+						background-color: currentColor;
+					}
+
+					&:before {
+						transform: rotate(45deg) translateX(100%);
+					}
+
+					&:after {
+						transform: rotate(-45deg) translateX(100%);
+					}
+
+					.qodef-m-line {
+
+						&.qodef--1 {
+							top: calc(50% - 1px);
+							transform: rotate(45deg);
+							transition-delay: 0s;
+						}
+
+						&.qodef--2 {
+							top: calc(50% - 1px);
+							transform: rotate(-45deg);
+							transition-delay: 0s;
+						}
+
+						&.qodef--3 {
+							display: none;
+						}
+
+						&:before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.qodef-fullscreen-menu--opened {
+	
+	.qodef-fullscreen-menu-opener {
+		color: $main-color;
+
+		.qodef-m-icon {
+
+			&, & * {
+				visibility: hidden;
+				opacity: 0;
+			}
+			
+			&.qodef--close {
+
+				&, & * {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	#qodef-page-header,
+	#qodef-page-mobile-header {
+		visibility: hidden;
+	}
+}

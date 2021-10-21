@@ -1,0 +1,52 @@
+2021-09-21T11:15:41+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\xampp\htdocs\architect\wp-content\plugins\qode-framework/inc/icons/include.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php:80
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): QodeFrameworkRoot->load_icons_files('')
+#1 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\architect\wp-settings.php(556): do_action('after_setup_the...')
+#4 D:\xampp\htdocs\architect\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\architect\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\architect\wp-admin\admin.php(34): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\architect\wp-admin\plugins.php(10): require_once('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php on line 80
+
+2021-09-21T11:16:39+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\xampp\htdocs\architect\wp-content\plugins\qode-framework/inc/icons/include.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php:80
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): QodeFrameworkRoot->load_icons_files('')
+#1 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\architect\wp-settings.php(556): do_action('after_setup_the...')
+#4 D:\xampp\htdocs\architect\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\architect\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\architect\wp-admin\admin.php(34): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\architect\wp-admin\plugins.php(10): require_once('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php on line 80
+
+2021-09-21T11:16:51+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\xampp\htdocs\architect\wp-content\plugins\qode-framework/inc/icons/include.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php:80
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): QodeFrameworkRoot->load_icons_files('')
+#1 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\architect\wp-settings.php(556): do_action('after_setup_the...')
+#4 D:\xampp\htdocs\architect\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\architect\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\architect\wp-admin\admin.php(34): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\architect\wp-admin\plugins.php(10): require_once('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php on line 80
+
+2021-09-21T11:17:03+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\xampp\htdocs\architect\wp-content\plugins\qode-framework/inc/icons/include.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php:80
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): QodeFrameworkRoot->load_icons_files('')
+#1 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\architect\wp-settings.php(556): do_action('after_setup_the...')
+#4 D:\xampp\htdocs\architect\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\architect\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\architect\wp-admin\admin.php(34): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\architect\wp-admin\plugins.php(10): require_once('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\qode-framework\inc\class-qodeframeworkroot.php on line 80
+

@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Include variables and mixins
+   ========================================================================== */
+@import '../../../../../themes/emaurri/assets/css/scss/variables';
+@import '../../../../../themes/emaurri/assets/css/scss/grid-variables';
+@import '../../../../../themes/emaurri/assets/css/scss/mixins';
+@import '../../../../../themes/emaurri/assets/css/scss/shortcodes-mixins';
+
+/* ========================================================================== */
+
+@import 'parts/mixins';
+@import 'parts/*-default.scss';
+@import '../../../inc/**/assets/css/scss/**/*-default.scss';
+@import '../../../inc/**/assets/css/scss/**/*-responsive.scss';

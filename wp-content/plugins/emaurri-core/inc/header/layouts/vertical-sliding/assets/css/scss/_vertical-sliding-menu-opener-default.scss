@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Vertical Sliding Menu Opener styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+    
+    &.qodef-vertical-sliding-menu-opener {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    
+        &.qodef-source--predefined {
+            top: calc(50% - 21px / 2);
+            transform: none;
+
+            .qodef--close {
+                opacity: 0;
+
+                .qodef-m-lines {
+                    width: 24px;
+                    height: 16px;
+
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        top: 49%;
+                        width: 100%;
+                        height: 1px;
+                        background-color: currentColor;
+                        transition-delay: 0s;
+                    }
+
+                    &:before {
+                        transform: rotate(45deg) translateX(-100%);
+                    }
+
+                    &:after {
+                        transform: rotate(-45deg) translateX(-100%);
+                    }
+                }
+
+                .qodef-m-line {
+                    transition-delay: 0s;
+
+                    &.qodef--1 {
+                        top: calc(50% - 1px);
+                        transform: rotate(45deg);
+                    }
+
+                    &.qodef--2 {
+                        top: calc(50% - 1px);
+                        transform: rotate(-45deg);
+                    }
+
+                    &.qodef--3 {
+                        display: none;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+
+            .qodef-vertical-sliding-menu--opened & {
+                left: calc(50% - 12px);
+
+                .qodef--close {
+                    opacity: 1;
+
+                    .qodef-m-lines {
+                        transition: .35s ease-out;
+
+                        &:before,
+                        &:after {
+                            transition: all .35s ease-out;
+                        }
+                    }
+                }
+
+                .qodef--open {
+                    opacity: 0;
+
+                    &, * {
+                        transition-delay: 0s;
+                        transition: none;
+                    }
+
+                    .qodef-m-line {
+
+                        &:before, &:after {
+                            display: none;
+                        }
+                    }
+                }
+
+                .qodef--close:hover {
+
+                    .qodef-m-lines {
+
+                        &:before {
+                            transform: rotate(45deg) translateX(0);
+                            transition-delay: .3s;
+                        }
+
+                        &:after {
+                            transform: rotate(-45deg) translateX(0);
+                            transition-delay: .45s;
+                        }
+                    }
+
+                    .qodef-m-line {
+
+                        &.qodef--1 {
+                            transform: rotate(45deg) translateX(100%);
+                            transition-delay: 0s;
+                        }
+
+                        &.qodef--2 {
+                            transform: rotate(-45deg) translateX(100%);
+                            transition-delay: .15s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.qodef-vertical-sliding-menu--opened {
+    
+    .qodef-vertical-sliding-menu-opener {
+
+        .qodef-m-icon {
+            visibility: hidden;
+
+            &.qodef--close {
+                visibility: visible;
+            }
+        }
+    }
+
+    #qodef-page-header .qodef-header-logo-link img {
+        
+        &.qodef--light {
+            opacity: 1;
+        }
+
+        &.qodef--main,
+        &.qodef--dark {
+            opacity: 0;
+        }
+    }
+}

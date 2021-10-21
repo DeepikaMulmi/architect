@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Image Gallery shortcode styles
+   ========================================================================== */
+
+.qodef-image-gallery {
+
+	&.qodef-bullets-align--left {
+		.swiper-pagination {
+			text-align: left;
+		}
+	}
+
+	&.qodef-bullets-align--center {
+		.swiper-pagination {
+			text-align: center;
+		}
+	}
+
+	&.qodef-bullets-align--right {
+		.swiper-pagination {
+			text-align: right;
+		}
+	}
+
+	&.qodef-swiper-container {
+		padding-bottom: 125px;
+	}
+
+	&.qodef-border-enabled {
+
+		.swiper-wrapper {
+			padding-left: 10px;
+		}
+
+		.swiper-slide {
+			margin: 10px 0;
+
+			border: 1px solid $additional-border-color;
+			@include qodefCorners();
+		}
+	}
+}

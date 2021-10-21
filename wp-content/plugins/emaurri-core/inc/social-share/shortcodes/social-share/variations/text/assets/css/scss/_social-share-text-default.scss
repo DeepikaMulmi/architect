@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	&.qodef-layout--text {
+
+		ul.qodef-shortcode-list {
+			@include qodefSocialShareStyle();
+		}
+		
+		li {
+			margin-right: 15px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+    @include qodefRelativeLayout();
+
+    .ajax-loader {
+        animation: qode-rotate 2s linear infinite;
+        background-image: none !important;
+        border: 2px solid #e6e6e6 !important;
+        border-radius: 50%;
+        border-top: 2px solid $main-color !important;
+        height: 23px !important;
+        margin: 0 0 0 12px !important;
+        position: absolute;
+        right: -10px;
+        width: 23px !important;
+    }
+
+    .qodef-standard-contact-form {
+
+        input[type=email],
+        input[type=tel],
+        input[type=text],
+        input[type=url] {
+            margin-bottom: 18px;
+        }
+
+        textarea {
+            margin: 31px 0 29px;
+            padding-top: 12px
+        }
+    }
+
+    button {
+
+        .qodef-m-btn-line {
+            position: absolute;
+            transition: transform .35s ease-out;
+
+            background-color: currentColor; // temporarily
+
+            &.qodef-btn-line {
+
+                &--top {
+                    left: -1px;
+                    top: -1px;
+                    height: 1px;
+                    width: calc(100% + 2px);
+                    transform: scaleX(0);
+                    transform-origin: left center;
+                }
+
+                &--right {
+                    right: -1px;
+                    bottom: -1px;
+                    width: 1px;
+                    height: calc(100% + 2px);
+                    transform: scaleY(0);
+                    transform-origin: center bottom;
+                }
+
+                &--bottom {
+                    right: -1px;
+                    bottom: -1px;
+                    height: 1px;
+                    width: calc(100% + 2px);
+                    transform: scaleX(0);
+                    transform-origin: right center;
+                }
+
+                &--left {
+                    left: -1px;
+                    top: -1px;
+                    width: 1px;
+                    height: calc(100% + 2px);
+                    transform: scaleY(0);
+                    transform-origin: center top;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: initial;
+            border-color: #919191;
+            color: initial;
+
+            .qodef-m-btn-line {
+
+                &.qodef-btn-line {
+
+                    &--top,
+                    &--bottom {
+                        transform: scaleX(1);
+                    }
+
+                    &--right,
+                    &--left {
+                        transform: scaleY(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wpcf7-response-output {
+    margin: 1em 0 0 !important;
+}
+
+.qodef-newsletter-form {
+    position: relative;
+
+    input {
+        padding-left: 0;
+    }
+
+    button {
+        border: none;
+        background: none;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        padding: 3px 0 3px 18px;
+        color: $additional-meta-color;
+
+        &:hover {
+            border: none;
+            background: none;
+            color: $additional-meta-color;
+        }
+
+        #qodef-page-footer & {
+            color: $border-color
+        }
+    }
+
+    &:hover {
+
+        button {
+            color: $text-color;
+        }
+
+        #qodef-page-footer & {
+
+            button {
+                color: $text-color;
+            }
+        }
+    }
+}

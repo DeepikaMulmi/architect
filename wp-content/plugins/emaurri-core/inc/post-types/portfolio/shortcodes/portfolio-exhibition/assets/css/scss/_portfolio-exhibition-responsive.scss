@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Portfolio exhibition shortcode responsive styles
+   ========================================================================== */
+
+.qodef-portfolio-exhibition {
+
+	@include qodefScreenSize1440 {
+		.qodef-slides-info-holder {
+
+			.qodef-e-info {
+				padding-left: 20%;
+			}
+
+			.qodef-e-title {
+				margin-right: 39px;
+			}
+		}
+
+		.qodef-e-portfolio-exhibition-bg-text {
+			font-size: 135px;
+			top: -60px;
+			margin-left: 140px;
+		}
+	}
+
+	@include qodefScreenSize1280 {
+		.qodef-e-portfolio-exhibition-bg-text {
+			font-size: 120px;
+		}
+	}
+
+	@include qodefScreenSize1024 {
+		.qodef-e-portfolio-exhibition-bg-text {
+			display: none;
+		}
+
+		.qodef-slides-info-holder {
+			display: none;
+		}
+
+		.qodef-slides-main-holder {
+			padding-left: 0;
+
+			.qodef-e-info {
+				display: block;
+				margin-bottom: 50px;
+			}
+
+			article {
+				margin-bottom: 100px
+			}
+		}
+
+		.qodef-e-read-more {
+			margin-bottom: 55px;
+		}
+	}
+
+	@include qodefScreenSize680 {
+		.qodef-e-title {
+			margin-right: 20px;
+		}
+	}
+
+}

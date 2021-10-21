@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Title styles
+   ========================================================================== */
+
+.qodef-page-title {
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	&.qodef-image--responsive {
+		height: auto !important; // because of inline style
+		
+		.qodef-m-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			&.qodef-content-grid {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.qodef-m-content {
+		
+		&.qodef-content-full-width {
+			padding: $full-width-side-padding;
+		}
+	}
+	
+	.qodef-breadcrumbs {
+		@include qodefMetaStyle($color: #8c8282, $line-height: 1.5em);
+		
+		a:hover {
+			color: #8c8282;
+		}
+		
+		.qodef-breadcrumbs-separator {
+			margin: 0 5px;
+			color: #e5d8d8;
+			
+			&:after {
+				content: '|';
+			}
+		}
+
+		.qodef-breadcrumbs-current {
+			margin-right: .5em // When Page 2 added, make a space between
+		}
+	}
+}

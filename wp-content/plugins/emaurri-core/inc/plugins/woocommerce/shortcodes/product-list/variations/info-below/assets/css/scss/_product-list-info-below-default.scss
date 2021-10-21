@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Product List Info on Image styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+	
+	&.qodef-item-layout--info-below {
+		
+		.qodef-woo-product-content {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+
+			.qodef-woo-product-title {
+				order: 2;
+				flex: 1 1 auto
+			}
+
+			.qodef-woo-product-categories {
+				order: 3;
+				flex-basis: 100%
+			}
+			.price {
+				order: 2;
+				flex: 0 1 auto;
+				margin-top: 0;
+				font-size: 15px;
+			}
+		}
+	}
+}

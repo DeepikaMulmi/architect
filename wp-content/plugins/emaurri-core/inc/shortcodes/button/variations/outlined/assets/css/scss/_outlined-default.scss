@@ -1,0 +1,155 @@
+.qodef-button {
+
+    &.qodef-layout--outlined {
+        @include qodefButtonOutlinedColor();
+
+        .qodef-m-corner {
+            position: absolute;
+            color: #e1e1e1;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: currentColor;
+                transition: .2s ease-out;
+            }
+
+            &:before {
+                width: 10px;
+                height: 1px;
+            }
+
+            &:after {
+                width: 1px;
+                height: 10px;
+            }
+
+            &.qodef--top-left {
+                top: 0;
+                left: 0;
+
+                &:before {
+                    top: -1px;
+                    left: -11px;
+                }
+
+                &:after {
+                    top: -11px;
+                    left: -1px;
+                }
+            }
+
+            &.qodef--top-right {
+                top: 0;
+                right: 0;
+
+                &:before {
+                    top: -1px;
+                    left: 1px;
+                }
+
+                &:after {
+                    top: -11px;
+                    left: 0;
+                }
+            }
+
+            &.qodef--bottom-left {
+                bottom: 0;
+                left: 0;
+
+                &:before {
+                    top: 0;
+                    left: -11px;
+                }
+
+                &:after {
+                    top: 1px;
+                    left: -1px;
+                }
+            }
+
+            &.qodef--bottom-right {
+                bottom: 0;
+                right: 0;
+
+                &:before {
+                    top: 0;
+                    left: 1px;
+                }
+
+                &:after {
+                    top: 1px;
+                    left: 0;
+                }
+            }
+        }
+
+        .qodef-m-btn-line {
+            position: absolute;
+            transition: transform .35s ease-out;
+
+            background-color: currentColor; // temporarily
+
+            &.qodef-btn-line {
+
+                &--top {
+                    left: -1px;
+                    top: -1px;
+                    height: 1px;
+                    width: calc(100% + 2px);
+                    transform: scaleX(0);
+                    transform-origin: left center;
+                }
+
+                &--right {
+                    right: -1px;
+                    bottom: -1px;
+                    width: 1px;
+                    height: calc(100% + 2px);
+                    transform: scaleY(0);
+                    transform-origin: center bottom;
+                }
+
+                &--bottom {
+                    right: -1px;
+                    bottom: -1px;
+                    height: 1px;
+                    width: calc(100% + 2px);
+                    transform: scaleX(0);
+                    transform-origin: right center;
+                }
+
+                &--left {
+                    left: -1px;
+                    top: -1px;
+                    width: 1px;
+                    height: calc(100% + 2px);
+                    transform: scaleY(0);
+                    transform-origin: center top;
+                }
+            }
+        }
+
+        &:hover {
+
+            .qodef-m-btn-line {
+
+                &.qodef-btn-line {
+
+                    &--top,
+                    &--bottom {
+                        transform: scaleX(1);
+                    }
+
+                    &--right,
+                    &--left {
+                        transform: scaleY(1);
+                    }
+                }
+            }
+        }
+    }
+}

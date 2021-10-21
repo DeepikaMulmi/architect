@@ -1,0 +1,34 @@
+2021-09-27T15:18:22+00:00 CRITICAL Uncaught TypeError: is_dir(): Argument #1 ($filename) must be of type string, WP_Error given in D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php:348
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php(348): is_dir(Object(WP_Error))
+#1 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\sources\local.php(838): Elementor\Core\Files\Uploads_Manager->remove_file_or_dir(Object(WP_Error))
+#2 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(455): Elementor\TemplateLibrary\Source_Local->import_template('40th CareFooter...', 'D:\\xampp\\htdocs...')
+#3 [internal function]: Elementor\TemplateLibrary\Manager->import_template(Array)
+#4 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(535): call_user_func(Array, Array)
+#5 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(567): Elementor\TemplateLibrary\Manager->handle_ajax_request('import_template', Array)
+#6 [internal function]: Elementor\TemplateLibrary\Manager->Elementor\TemplateLibrary\{closure}(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#7 D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\common\modules\ajax\module.php(171): call_user_func(Object(Closure), Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#8 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#9 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#10 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#11 D:\xampp\htdocs\architect\wp-admin\admin-ajax.php(187): do_action('wp_ajax_element...')
+#12 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php on line 348
+
+2021-09-27T15:26:55+00:00 CRITICAL Uncaught TypeError: is_dir(): Argument #1 ($filename) must be of type string, WP_Error given in D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php:348
+Stack trace:
+#0 D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php(348): is_dir(Object(WP_Error))
+#1 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\sources\local.php(838): Elementor\Core\Files\Uploads_Manager->remove_file_or_dir(Object(WP_Error))
+#2 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(455): Elementor\TemplateLibrary\Source_Local->import_template('40th CareFooter...', 'D:\\xampp\\htdocs...')
+#3 [internal function]: Elementor\TemplateLibrary\Manager->import_template(Array)
+#4 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(535): call_user_func(Array, Array)
+#5 D:\xampp\htdocs\architect\wp-content\plugins\elementor\includes\template-library\manager.php(567): Elementor\TemplateLibrary\Manager->handle_ajax_request('import_template', Array)
+#6 [internal function]: Elementor\TemplateLibrary\Manager->Elementor\TemplateLibrary\{closure}(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#7 D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\common\modules\ajax\module.php(171): call_user_func(Object(Closure), Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#8 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(303): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#9 D:\xampp\htdocs\architect\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#10 D:\xampp\htdocs\architect\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#11 D:\xampp\htdocs\architect\wp-admin\admin-ajax.php(187): do_action('wp_ajax_element...')
+#12 {main}
+  thrown in D:\xampp\htdocs\architect\wp-content\plugins\elementor\core\files\uploads-manager.php on line 348
+

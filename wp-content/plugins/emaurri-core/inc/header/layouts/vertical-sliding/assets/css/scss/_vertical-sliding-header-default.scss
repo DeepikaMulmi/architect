@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Vertical Sliding layout styles
+   ========================================================================== */
+
+$vertical-sliding-header-width--open: 570px;
+$vertical-sliding-header-width--initial: 100px;
+
+$vertical-sliding-content-grid-width-responsive-map: (
+        1400 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1300 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1200 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1440,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1100 : (
+                responsive-break: (
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        )
+);
+
+.qodef-header--vertical-sliding {
+    .qodef-content-grid {
+        @each $key, $values in $vertical-sliding-content-grid-width-responsive-map {
+            $index: 1;
+
+            @each $responsive-key, $responsive-value in map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'responsive-break') {
+                @media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+                    @at-root .qodef-content-grid-#{$key}#{&} {
+                        width: #{nth(map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+                    }
+                }
+
+                $index: $index + 1;
+            }
+        }
+    }
+
+    #qodef-page-header {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: $vertical-sliding-header-width--initial;
+    
+        .qodef-header-logo-link {
+            top: 40px;
+        
+            img {
+                max-width: unset;
+            }
+        }
+        
+        .qodef-widget-holder {
+            height: auto;
+            position: relative;
+            bottom: 10px;
+            left: 50%;
+            margin-left: 4px;
+
+            .widget {
+                transform: rotate(-90deg);
+                transform-origin: left top;
+            }
+        }
+    }
+
+    #qodef-page-header-inner {
+        padding: 0;
+    }
+
+    .qodef-vertical-sliding-area {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+
+        &.qodef--static {
+            
+            .qodef-header-logo-link,
+            .qodef-widget-holder {
+                animation: qode-fade-in .25s $sliding-area-transition-time linear both;
+            }
+    
+            background-color: #fff;
+        }
+
+        &.qodef--dynamic {
+            background-color: #ffffff;
+            left: -#{ $vertical-sliding-header-width--initial + $vertical-sliding-header-width--open};
+            padding-left: $vertical-sliding-header-width--initial;
+            position: fixed;
+            top: 0;
+            transition: $sliding-area-transition;
+            visibility: hidden;
+            width: $vertical-sliding-header-width--open;
+            z-index: -1;
+
+            .qodef-header-logo-link,
+            .qodef-widget-holder {
+                margin-right: $vertical-sliding-header-width--initial;
+            }
+
+            .qodef-header-logo-link {
+                img {
+                    position: relative !important; // override default logo style
+                    top: 0 !important; // override default logo style
+                    transform: none !important; // override default logo style
+                }
+            }
+        }
+    }
+
+    #qodef-page-header.qodef-vertical-sliding-menu--opened {
+        .qodef--dynamic {
+            left: 0;
+            visibility: visible;
+        }
+    }
+
+    &.admin-bar {
+        #qodef-page-header,
+        .qodef--dynamic {
+            height: calc(100% - 32px);
+            top: 32px;
+        }
+    }
+
+    #qodef-page-outer,
+    #qodef-page-footer {
+        @media (min-width: 1025px) {
+            padding-left: $vertical-sliding-header-width--initial;
+        }
+    }
+
+    &.qodef-header--fixed-display {
+
+        #qodef-page-header {
+            width: $vertical-sliding-header-width--initial;
+        }
+    }
+}

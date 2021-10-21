@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Mobile Header layout styles
+   ========================================================================== */
+
+.qodef-mobile-header--side-area #qodef-page-mobile-header-inner {
+	
+	.qodef-side-area-mobile-header-opener {
+		margin-left: 20px;
+	}
+}
+
+$side-area-width: 340px;
+$side-area-side-padding: 60px;
+
+#qodef-side-area-mobile-header {
+	position: fixed;
+	top: 0;
+	right: -$side-area-width;
+	width: $side-area-width;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 70px $side-area-side-padding;
+	background-color: $box-background-color;
+	overflow: hidden;
+	visibility: hidden;
+	z-index: 9999;
+	transition: $sliding-area-transition;
+	
+	.qodef-m-close {
+		position: absolute;
+		top: 26px;
+		right: 40px;
+		display: block;
+		z-index: 1000;
+		color: #fff;
+		
+		&.qodef-source--predefined {
+			
+			.qodef-m-line {
+				
+				&.qodef--1 {
+					top: 13px;
+					transform: rotate(45deg);
+				}
+				
+				&.qodef--2 {
+					top: 13px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	
+	.qodef-m-navigation {
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			
+			li {
+				position: relative;
+				padding: 0;
+				margin: 0;
+				
+				.qodef-drop-down-second {
+					display: none;
+					transform: translateZ(0);
+				}
+				
+				.qodef-drop-down-second-inner {
+					position: relative;
+					display: block;
+					padding: 0;
+					z-index: 997;
+				}
+				
+				&.qodef--hide-link {
+					
+					> a {
+						cursor: default;
+					}
+				}
+			}
+		}
+		
+		.qodef-menu-item-icon {
+			margin-right: 5px;
+		}
+		
+		.qodef-mega-menu-widget-holder {
+			display: none;
+		}
+		
+		> ul {
+			
+			> li {
+				
+				> a {
+					@include qodefMenuLevelOneInitialStyle(null, #fff);
+					
+					&:hover {
+						@include qodefMenuLevelOneHoverStyle();
+					}
+				}
+				
+				.qodef-drop-down-second-inner {
+					
+					> ul {
+						padding: 10px 0 12px;
+					}
+					
+					ul {
+						padding-left: 20px;
+						
+						li {
+							
+							> a {
+								@include qodefMenuLevelTwoInitialStyle();
+								@include qodefMenuLevelTwoInitialTypographyStyle(#fff);
+							}
+							
+							&:hover,
+							&.current-menu-ancestor,
+							&.current-menu-item {
+								
+								> a {
+									@include qodefMenuLevelTwoHoverStyle();
+								}
+							}
+						}
+					}
+				}
+				
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					
+					> a {
+						@include qodefMenuLevelOneHoverStyle();
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-widget-holder {
+		position: absolute;
+		left: $side-area-side-padding;
+		bottom: 20px;
+		width: calc(100% - 2*#{$side-area-side-padding});
+		height: auto;
+		
+		.widget {
+			margin: 0;
+		}
+	}
+	
+	.admin-bar & {
+		top: 32px;
+		height: calc(100vh - 32px);
+	}
+	
+	&.qodef--opened {
+		right: 0;
+		visibility: visible;
+	}
+}

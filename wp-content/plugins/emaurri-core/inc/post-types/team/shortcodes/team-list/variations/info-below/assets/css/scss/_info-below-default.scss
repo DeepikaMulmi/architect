@@ -1,0 +1,48 @@
+.qodef-team-list {
+	
+	&.qodef-item-layout--info-below {
+
+		.qodef-e-inner {
+
+			&:hover {
+
+				.qodef-e-image-inner {
+					opacity: 1;
+
+					.qodef-team-member-social-icons {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+			}
+		}
+
+		.qodef-e-image {
+			position: relative;
+		}
+
+		.qodef-e-image-inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(251, 251, 251, .8);
+			opacity: 0;
+			transition: opacity .5s;
+
+			.qodef-team-member-social-icons {
+				opacity: 0;
+				transform: translateY(15px);
+				transition: .3s ease;
+			}
+		}
+		
+		.qodef-e-content {
+			margin: 19px 0 0;
+		}
+	}
+}

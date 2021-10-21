@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Accordion shortcode styles
+   ========================================================================== */
+
+.qodef-accordion.qodef-layout--simple {
+	
+	.qodef-accordion-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 30px 0 0;
+		padding: 18px 19px;
+		transition: color .2s ease-out, background-color .2s ease-out;
+		cursor: pointer;
+		border: 1px solid #bebebe;
+		@include qodefCorners;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+		
+		.qodef-accordion-mark {
+			flex-shrink: 0;
+			font-family: $meta-font;
+			display: flex;
+			font-size: 30px;
+			font-weight: 300;
+			line-height: 0;
+			text-align: center;
+			right: 20px;
+			transform: translateY(-50%);
+
+			span {
+				display: flex;
+				transition: opacity .2s ease-out;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+				
+				&.qodef-icon--plus {
+					transform: rotate(0);
+					transition: transform $transition-timing;
+				}
+			}
+		}
+		
+		&.ui-state-active,
+		&.ui-state-hover {
+			border-color: $border-color;
+
+			.qodef-accordion-mark {
+				span {
+					
+					&.qodef-icon--plus {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+	}
+
+	p.qodef-accordion-title {
+		@include qodefMetaStyle($font-size: 12px, $line-height: 1.75em);
+	}
+	
+	.qodef-accordion-content {
+		padding: 30px 5% 2px 20px;
+		margin: 0;
+
+		@include qodefScreenSize680 {
+			padding-right: 20px;
+		}
+		
+		p {
+			margin: 0;
+		}
+	}
+}

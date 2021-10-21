@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Text Marquee shortcode styles
+   ========================================================================== */
+
+.qodef-text-marquee {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-content {
+		display: flex;
+		white-space: nowrap;
+		font-size: 100px;
+		font-family: $heading-font;
+		line-height: 1em;
+		font-weight: 700;
+		overflow: hidden;
+	}
+	
+	.qodef-marquee-element {
+		padding: 0 25px;
+		will-change: transform;
+	}
+	
+	.qodef-m-text > span:after {
+		content: '\00b7';
+		display: inline-block;
+		padding: 0 28px;
+		color: $heading-color;
+	}
+	
+	.qodef-m-text--1 {
+		color: $heading-color;
+	}
+	
+	.qodef-m-text--2 {
+		color: $heading-color;
+	}
+	
+	.qodef-m-text--3 {
+		color: $heading-color;
+	}
+}

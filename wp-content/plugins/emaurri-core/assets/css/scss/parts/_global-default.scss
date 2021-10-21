@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.emaurri-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+.qodef-meta-style {
+	@include qodefMetaStyle();
+}
+
+.qodef-background-text-section.elementor-section .elementor-container  {
+	z-index: 1; // Make content go over text by default
+}
+
+.qodef-row-background-text{
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	line-height: 1;
+	justify-content: center;
+	align-items: center;
+	-webkit-text-stroke: 1px #e8ebe0;
+	font-size: 200px;
+	font-family: $meta-font;
+	letter-spacing: .075em;
+	color: #fff;
+	font-weight: 700;
+	opacity: .6;
+	text-transform: uppercase;
+	text-align: center;
+
+	@include qodefScreenSize1024(){
+		display: none;
+	}
+
+	.qodef-row-background-text-inner{
+		position: relative;
+
+		@include qodefScreenSize1440 {
+			font-size: .75em;
+		}
+
+		@include qodefScreenSize1280 {
+			font-size: .65em;
+		}
+
+		.qodef-row-background-word {
+			display: inline-block;
+			opacity: 0;
+
+			.qodef-bg-text-char {
+				opacity: 0;
+				transform: translateY(100px) skew(0deg,10deg);
+				transition: .7s cubic-bezier(0.65, 0.08, 0.12, 1.05);
+				display: inline-flex;
+				min-width: 25px;
+
+				@for $i from 2 through 20 {
+					$transition-delay: $i * .12s - 0.12s;
+
+					&:nth-child(#{$i}) {
+						transition-delay: 0s + $transition-delay;
+					}
+				}
+			}
+
+			&.qodef--appeared {
+				opacity: 1;
+
+				.qodef-bg-text-char {
+					opacity: 1;
+					transform: translateY(0) skew(0deg, 0deg);
+				}
+			}
+		}
+	}
+}

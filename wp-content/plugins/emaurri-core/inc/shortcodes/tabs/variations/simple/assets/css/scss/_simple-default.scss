@@ -1,0 +1,43 @@
+.qodef-tabs.qodef-layout--simple {
+
+    .qodef-tabs-navigation {
+        @include qodefTabs();
+    }
+
+    &.qodef-orientation--vertical {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        height: 100%;
+
+        .qodef-tabs-navigation {
+            flex-shrink: 0;
+            display: block;
+            padding-right: 26px;
+            margin-right: 26px;
+            border-right: 1px solid $border-color;
+
+            li {
+                width: 100%;
+                margin-bottom: 26px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    display: inline-block;
+                    width: auto;
+                }
+            }
+        }
+
+        .qodef-tabs-content {
+            margin-top: 0;
+        }
+    }
+
+    .qodef-tabs-content {
+        margin: 26px 0 0;
+    }
+}

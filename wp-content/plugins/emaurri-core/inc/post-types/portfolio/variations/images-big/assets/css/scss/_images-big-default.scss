@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Portfolio Single variation styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+    
+    &.qodef-layout--images-big {
+        
+        .qodef-media {
+    
+            .qodef-grid-item {
+                display: block;
+                margin-bottom: 40px;
+                float: none;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

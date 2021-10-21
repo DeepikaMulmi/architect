@@ -1,0 +1,220 @@
+/* ==========================================================================
+# Fullscreen search - start
+========================================================================== */
+
+/* Fullscreen search general style - start
+========================================================================== */
+
+.qodef-fullscreen-search-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbfbfb;
+    z-index: 100;
+
+    .qodef-m-inner{
+        width: 100%;
+    }
+
+    .qodef-m-form {
+        position: relative;
+        width: 60%;
+        margin: 0 auto;
+        z-index: 12;
+        padding: 30px;
+        box-sizing: content-box;
+    }
+    
+    .qodef-m-form-field {
+        height: 100%;
+        margin: 0;
+        padding: 0 43px 1px;
+        font-size: 27px;
+        color: #4e4e4e;
+        line-height: 2em;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        text-transform: lowercase;
+    }
+    
+    .qodef-m-form-submit {
+        position: absolute;
+        right: 50px;
+        bottom: -20px;
+        width: auto;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        color: $heading-color;
+        background: none;
+        border: 0;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+        transition: $color-transition;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+        
+        &:hover {
+            color: $main-color;
+            background: none;
+        }
+        
+        .qodef-fullscreen-search--opened & {
+            opacity: 1;
+            right: 80px;
+            bottom: 38px;
+            transition: color 0.2s ease, opacity .2s ease-out 1.1s, bottom .4s ease-out .9s;
+        }
+        
+        &.qodef-source--icon-pack {
+            font-size: 18px;
+        }
+    }
+    
+    .qodef-m-form-line {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        border-bottom: 1px solid $border-color;
+        transition: all .3s ease;
+        
+        .qodef-fullscreen-search--opened & {
+            transition: width 0.5s ease .6s;
+            bottom: 28px;
+            width: calc(100% - 60px);
+            left: 30px;
+        }
+    }
+    
+    .qodef-m-close {
+        position: absolute;
+        color: $text-color;
+        opacity: 0;
+        visibility: hidden;
+	    z-index: 1;
+
+        svg {
+            stroke: none;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .admin-bar & {
+            top: 72px;
+        }
+    
+        &:hover {
+            color: $heading-color;
+        }
+
+        &.qodef-source--icon-pack {
+            font-size: 25px;
+        }
+    
+        .qodef-fullscreen-search--opened & {
+            opacity: 1;
+            visibility: visible;
+            top: 52px;
+            right: 40px;
+
+            .qodef-m-line {
+
+                &.qodef--1 {
+                    top: 12px;
+                    transform: rotate(45deg);
+                }
+
+                &.qodef--2 {
+                    top: 12px;
+                    transform: rotate(-45deg);
+                }
+
+                &.qodef--3 {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #qodef-page-header .qodef-header-logo-link img {
+
+        &.qodef--light,
+        &.qodef--main,
+        &.qodef--dark {
+            opacity: 0;
+        }
+    }
+
+    .qodef-header-logo-link {
+        display: none;
+    }
+
+    .qodef-fullscreen-search-overlay-close-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: none;
+
+        @include qodefScreenSize1024 {
+            display: none;
+        }
+    }
+}
+
+/* Fullscreen search general style - end
+========================================================================== */
+
+/* Fullscreen search fade style - start
+========================================================================== */
+
+.qodef-fullscreen-search--fadeout .qodef-fullscreen-search-holder {
+    animation: fullscreen_search_fade_out .3s ease both;
+}
+
+.qodef-fullscreen-search--fadein .qodef-fullscreen-search-holder {
+    animation: fullscreen_search_fade_in .3s ease both;
+}
+
+@keyframes fullscreen_search_fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fullscreen_search_fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Fullscreen search fade style - end
+========================================================================== */
+
+/* ==========================================================================
+# Fullscreen search - end
+========================================================================== */

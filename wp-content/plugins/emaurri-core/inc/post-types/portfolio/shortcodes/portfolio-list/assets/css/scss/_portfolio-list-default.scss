@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Portfolio List shortcode styles
+   ========================================================================== */
+
+@keyframes qodef-fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.qodef-portfolio-list {
+	animation: qodef-fade-in .5s ease-out;
+	
+	.qodef-e-inner {
+		position: relative;
+
+		@include qodefScreenSize1024 {
+			padding: 0 !important; //Remove custom paddings on tablets and smaller
+		}
+	}
+	
+	.qodef-e-image {
+		
+		img {
+			display: block;
+		}
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	p.qodef-e-title {
+		@include qodefMetaStyle($line-height: 1.7em);
+	}
+
+	.qodef-e-info-author,
+	.qodef-e-info-category,
+	.qodef-e-info-date {
+		@include qodefMetaStyle($additional-meta-color, $line-height: 1.7em);
+	}
+
+	.qodef-e-info-author a {
+		display: inline; // If in slider, display is initially set to display block which causes trouble with author link
+	}
+
+	.qodef-e-info-date {
+		margin-top: 7px;
+	}
+
+	.qodef-m-pagination {
+		margin-top: 35px;
+	}
+
+	&.qodef-items--fixed {
+
+		.qodef-e-image {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.qodef-e-media-image {
+			height: 100%;
+
+			a {
+				@include qodefRelativeLayout();
+				height: 100%;
+			}
+		}
+	}
+}
+
+@import 'portfolio-list-scrollable';

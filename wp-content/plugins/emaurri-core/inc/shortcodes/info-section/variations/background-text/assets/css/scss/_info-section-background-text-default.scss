@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Info Section Background Text shortcode styles
+   ========================================================================== */
+.qodef-info-section {
+	&.qodef-layout--background-text {
+		@include qodefRelativeLayout();
+		.qodef-m-info {
+			position: relative;
+			z-index: 2;
+		}
+		.qodef-m-title {
+			margin: 0 0 18px;
+		}
+		.qodef-m-text {
+			margin: 0;
+		}
+		.qodef-button {
+			margin-top: 6px;
+		}
+		.qodef-m-background-text {
+			position: absolute;
+			display: inline-block;
+			color: rgba($heading-color, 0.1);
+			text-align: center;
+			font-weight: 700;
+			font-size: 250px;
+		}
+		
+		&.qodef-background-text-pos--top-left {
+			.qodef-m-background-text {
+				top: 0;
+				left: -20px;
+			}
+		}
+		
+		&.qodef-background-text-pos--top-right {
+			.qodef-m-background-text {
+				top: 0;
+				right: -20px;
+			}
+		}
+		
+		&.qodef-background-text-pos--bottom-left {
+			.qodef-m-background-text {
+				bottom: 0;
+				left: -20px;
+			}
+		}
+		
+		&.qodef-background-text-pos--bottom-right {
+			.qodef-m-background-text {
+				bottom: 0;
+				right: -20px;
+			}
+		}
+		
+		&.qodef-background-text-pos--center {
+			.qodef-m-background-text {
+				font-size: 450px;
+				top: 34px;
+				left: 0;
+				right: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Info Section Background Text shortcode styles
+   ========================================================================== */

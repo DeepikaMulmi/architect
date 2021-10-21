@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	
+	$socialShareWidth: 90px;
+	$socialShareHeight: 30px;
+	
+	&.qodef-layout--dropdown {
+		position: relative;
+		display: inline-block;
+		vertical-align: bottom;
+		
+		.qodef-social-title {
+			margin: 0;
+			vertical-align: middle;
+		}
+		.qodef-social-share-icon {
+			vertical-align: middle;
+		}
+		
+		&:hover {
+			
+			.qodef-social-share-dropdown ul li {
+				opacity: 1;
+				visibility: visible;
+				cursor: pointer;
+				
+				/* opacity and visibility need to be different, but not background-color */
+				@for $i from 2 through 7 {
+					&:nth-child(#{$i}) {
+						$transition-delay: #{($i)/10+s};
+						
+						-webkit-transition-delay: $transition-delay;
+						-moz-transition-delay: $transition-delay;
+						transition-delay: $transition-delay;
+					}
+				}
+			}
+		}
+		
+		.qodef-social-share-dropdown-opener {
+			display: block;
+			
+			.qodef-social-share-title {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 5px;
+			}
+		}
+		
+		.qodef-social-share-dropdown {
+			position: absolute;
+			visibility: hidden;
+			z-index: 950;
+			
+			ul {
+				position: relative;
+				display: block;
+				z-index: 990;
+				margin: 0;
+				padding: 0 !important;
+			}
+			
+			li {
+				position: absolute;
+				display: block;
+				text-align: center;
+				visibility: hidden;
+				overflow: hidden;
+				opacity: 0;
+				transition: opacity .2s ease-out, visibility .2s ease-out;
+				
+				a {
+					transition: color .2s ease-out, background-color .2s ease-out;
+				}
+				
+				* {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+		
+		&.qodef-dropdown--bottom {
+			
+			.qodef-social-share-dropdown {
+				bottom: 0;
+				left: 0;
+				
+				li {
+					width: $socialShareWidth;
+					height: $socialShareHeight;
+					line-height: $socialShareHeight;
+					border: 1px solid $border-color;
+					
+					&:not(:first-child) {
+						border-top: none;
+					}
+					
+					a {
+						font-size: 14px;
+						color: $text-color;
+						background-color: #fff;
+					}
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							bottom: #{-$i*(($socialShareHeight))};
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-dropdown--right {
+			
+			.qodef-social-share-dropdown {
+				top: 0;
+				right: 0;
+				
+				li {
+					width: calc(#{$socialShareWidth} / 3);
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							left: #{($i - 1)*(($socialShareWidth / 3)) + 5};
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-dropdown--left {
+			
+			.qodef-social-share-dropdown {
+				top: 0;
+				left: 0;
+				
+				li {
+					width: calc(#{$socialShareWidth} / 3);
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							right: #{($i - 1)*(($socialShareWidth / 3)) + 5};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

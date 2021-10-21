@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Icon With Text shortcode styles
+   ========================================================================== */
+
+.qodef-icon-with-text {
+	&.qodef-layout--before-content {
+		display: flex;
+		align-items: flex-start;
+		
+		.qodef-m-icon-wrapper {
+			flex-shrink: 0;
+			margin-right: 15px;
+		}
+	}
+}

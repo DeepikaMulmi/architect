@@ -1,0 +1,12 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-overlay {
+		
+		.qodef-m-content-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			padding: 30px;
+		}
+	}
+}

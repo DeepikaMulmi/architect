@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Image Marquee shortcode responsive styles
+   ========================================================================== */
+
+@include qodefScreenSize680 {
+	
+	.qodef-image-marquee {
+		
+		.qodef-m-content {
+			
+			&.qodef--desktop {
+				display: none;
+			}
+			
+			&.qodef--mobile {
+				display: block;
+			}
+		}
+	}
+}

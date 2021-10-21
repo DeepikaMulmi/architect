@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Progress Bar shortcode styles
+   ========================================================================== */
+
+.qodef-progress-bar {
+	@include qodefRelativeLayout();
+	visibility: hidden;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.qodef-m-canvas {
+		@include qodefRelativeLayout();
+		
+		svg {
+			display: block;
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 20px 0 0;
+	}
+
+	p.qodef-m-title {
+		@include qodefMetaStyle($font-size: 12px)
+	}
+	
+	&.qodef--init {
+		visibility: visible;
+	}
+	
+	&:not(.qodef-layout--line) {
+		
+		.progressbar-text {
+			@include qodefAbsoluteLayout();
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			margin: 0;
+			@include qodefMetaStyle($font-size: 12px);
+		}
+	}
+	
+	&.qodef-layout--semi-circle {
+		
+		.progressbar-text {
+			padding-top: 20px;
+			transform: none !important;
+		}
+	}
+	
+	&.qodef-layout--line {
+		
+		.qodef-m-inner {
+			flex-direction: column-reverse;
+		}
+
+		.progressbar {
+			padding: 0 10px;
+			margin: 0 -10px;
+		}
+		
+		.proggress {
+			position: relative;
+			width: 0;
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				top: -10px;
+				width: 1px;
+				height: 21px;
+				background: #ccc;
+			}
+
+			&:before {
+				left: 0;
+			}
+
+			&:after {
+				right: 0;
+			}
+		}
+		
+		.percentCount {
+			position: absolute;
+			top: -24px;
+			right: 0;
+			width: auto;
+			@include qodefMetaStyle($font-size: 12px);
+		}
+		
+		.qodef-m-title {
+			margin: 0 12px 8px;
+		}
+		
+		&.qodef-percentage--floating {
+			
+			.percentCount {
+				left: 0;
+				right: auto;
+				transform: translateX(-150%);
+			}
+		}
+	}
+}

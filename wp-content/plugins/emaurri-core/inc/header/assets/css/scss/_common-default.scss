@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Header common styles
+   ========================================================================== */
+
+$left-right-spacing: 12px;
+
+#qodef-page-header {
+	.qodef-widget-holder {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		margin-left: $left-right-spacing * 2;
+
+		.widget {
+			margin: 0 $left-right-spacing;
+			
+			&:first-child {
+				margin-left: 0;
+			}
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	div[id^="monster-widget-placeholder"],
+	div[id^="woo-monster-widget-placeholder"] {
+		display: none;
+	}
+}
+
+#qodef-page-header-inner {
+	border-bottom: 1px solid $additional-border-color;
+	
+	&.qodef-content-grid {
+		padding: 0;
+	}
+}
+
+$header-light-skin-color: #fff;
+$header-light-skin-hover-color: $main-color;
+$header-dark-skin-color: #000;
+$header-dark-skin-hover-color: $main-color;
+
+#qodef-page-header-inner,
+.qodef-custom-header-layout {
+	
+	&.qodef-skin--light {
+		
+		nav > ul > li {
+			
+			> a {
+				color: $header-light-skin-color !important;
+				
+				&:hover {
+					color: $header-light-skin-hover-color !important;
+				}
+			}
+			
+			&.current-menu-ancestor,
+			&.current-menu-item {
+				
+				> a {
+					color: $header-light-skin-hover-color !important;
+				}
+			}
+		}
+		
+		.qodef-opener-icon {
+			
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+				
+				&:not(.qodef--opened) {
+					color: $header-light-skin-color !important;
+				}
+			}
+		}
+	}
+	
+	&.qodef-skin--dark {
+		
+		nav > ul > li {
+			
+			> a {
+				color: $header-dark-skin-color !important;
+				
+				&:hover {
+					color: $header-dark-skin-hover-color !important;
+				}
+			}
+			
+			&.current-menu-ancestor,
+			&.current-menu-item {
+				
+				> a {
+					color: $header-dark-skin-hover-color !important;
+				}
+			}
+		}
+		
+		.qodef-opener-icon {
+			
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+				
+				&:not(.qodef--opened) {
+					color: $header-dark-skin-color !important;
+				}
+			}
+		}
+	}
+}

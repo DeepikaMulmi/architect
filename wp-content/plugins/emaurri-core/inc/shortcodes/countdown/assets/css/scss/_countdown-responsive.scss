@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Countdown shortcode styles
+   ========================================================================== */
+
+.qodef-countdown {
+	
+	@include qodefScreenSize768 {
+		&.qodef-show--4,
+		&.qodef-show--5,
+		&.qodef-show--6 {
+			
+			.qodef-digit-wrapper {
+				width: 33.33333333333333%;
+			}
+		}
+	}
+}

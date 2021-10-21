@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Portfolio List shortcode variation hover styles
+   ========================================================================== */
+
+.qodef-portfolio-list.qodef-item-layout--info-follow.qodef-hover-animation--follow {
+	.qodef-e-inner {
+		overflow: hidden;
+
+		.qodef-e-image {
+			transform: scale(1);
+			transition: transform 0.4s ease;
+		}
+
+		&:hover .qodef-e-image {
+			transform: scale(1.03);
+		}
+	}
+
+	.qodef-e-content {
+		display: none;
+	}
+}
+
+.qodef-follow-info-holder {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	pointer-events: none;
+	visibility: hidden;
+	transition: transform 0.3s ease;
+
+	&.qodef-right {
+		text-align: right;
+		transform: translateX(-100%);
+	}
+
+	.qodef-follow-info-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.qodef-follow-info-title {
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		background-color: $main-color;
+		text-transform: uppercase;
+		white-space: nowrap;
+		z-index: 8;
+		-webkit-clip-path: inset(0 100% 0 0);
+		clip-path: inset(0 100% 0 0);
+		padding: 3px 5px;
+		margin-top: 4px;
+	}
+
+	.qodef-follow-info-category {
+		display: inline-block;
+		padding: 0 4px;
+		background-color: $main-color;
+		white-space: nowrap;
+		z-index: 9;
+		-webkit-clip-path: inset(0 100% 0 0);
+		clip-path: inset(0 100% 0 0);
+
+		a:not(:last-child) {
+			&:after {
+				content: "/";
+				margin: 0 2px 0 3px;
+			}
+		}
+	}
+
+	a {
+		color: #fff;
+	}
+
+	&.qodef-is-active {
+		visibility: visible;
+
+		.qodef-follow-info-title,
+		.qodef-follow-info-category {
+			-webkit-clip-path: inset(0 0 0 0);
+			clip-path: inset(0 0 0 0);
+		}
+
+		.qodef-follow-info-title {
+			transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+		}
+
+		.qodef-follow-info-category {
+			transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+	}
+}

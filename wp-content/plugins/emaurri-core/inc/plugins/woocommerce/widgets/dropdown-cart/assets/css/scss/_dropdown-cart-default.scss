@@ -1,0 +1,309 @@
+/* ==========================================================================
+   WooCommerce DropDown Cart static style start
+   ========================================================================== */
+
+.widget_emaurri_core_woo_dropdown_cart {
+	height: 100%;
+}
+
+.qodef-woo-dropdown-cart {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	padding: 0 10px;
+
+	.qodef-m {
+
+		&-inner {
+			@include qodefRelativeLayout();
+
+			height: 100%;
+		}
+
+		&-opener {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+
+			&-label,
+			&-count {
+				@include qodefMetaStyle(inherit);
+				margin-left: 10px;
+			}
+		}
+
+		&-dropdown {
+			position: absolute;
+			top: 100%;
+			left: auto;
+			right: 0;
+			text-align: left;
+			opacity: 0;
+			visibility: hidden;
+			transition: $opacity-transition, visibility $transition-timing;
+
+			&-inner {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				width: 305px;
+				padding: 28px 30px;
+				background-color: #fff;
+				border: 1px solid $additional-border-color;
+			}
+		}
+
+		&-order-details {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 28px;
+
+			> * {
+				margin: 0;
+			}
+
+			.qodef-m-order-label {
+				@include qodefMenuLevelOneInitialStyle();
+			}
+
+			.qodef-m-order-amount {
+				@include qodefMenuLevelOneInitialStyle();
+			}
+		}
+
+		&-action {
+			@include qodefRelativeLayout();
+			margin-top: 27px;
+
+			&-link {
+				@include qodefButtonDefaultStyle();
+				@include qodefButtonOutlinedColor();
+				@include qodefCorners();
+				width: 100%;
+				padding: 11px 20px 10px;
+				text-align: center;
+				font-size: 10px;
+
+				.qodef-m-btn-line {
+					position: absolute;
+					transition: transform .35s ease-out;
+
+					background-color: currentColor; // temporarily
+
+					&.qodef-btn-line {
+
+						&--top {
+							left: -1px;
+							top: -1px;
+							height: 1px;
+							width: calc(100% + 2px);
+							transform: scaleX(0);
+							transform-origin: left center;
+						}
+
+						&--right {
+							right: -1px;
+							bottom: -1px;
+							width: 1px;
+							height: calc(100% + 2px);
+							transform: scaleY(0);
+							transform-origin: center bottom;
+						}
+
+						&--bottom {
+							right: -1px;
+							bottom: -1px;
+							height: 1px;
+							width: calc(100% + 2px);
+							transform: scaleX(0);
+							transform-origin: right center;
+						}
+
+						&--left {
+							left: -1px;
+							top: -1px;
+							width: 1px;
+							height: calc(100% + 2px);
+							transform: scaleY(0);
+							transform-origin: center top;
+						}
+					}
+				}
+
+				&:hover {
+
+					#qodef-page-header & {
+						color: initial;
+					}
+
+					.qodef-m-btn-line {
+
+						&.qodef-btn-line {
+
+							&--top,
+							&--bottom {
+								transform: scaleX(1);
+							}
+
+							&--right,
+							&--left {
+								transform: scaleY(1);
+							}
+						}
+					}
+				}
+
+				#qodef-page-header & {
+					color: $main-color;
+				}
+			}
+		}
+	}
+
+	.qodef-woo-dropdown {
+
+		&-items {
+			@include qodefRelativeLayout();
+		}
+
+		&-item {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			margin-top: 20px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.qodef-e {
+
+		&-image {
+			flex-shrink: 0;
+			width: 80px;
+			margin-right: 20px;
+
+			a, img {
+				display: block;
+			}
+		}
+
+		&-content {
+			@include qodefRelativeLayout();
+
+			padding-right: 20px;
+		}
+
+		&-title {
+			@include qodefMenuLevelOneInitialStyle();
+			display: block;
+			line-height: 22px;
+			margin: 10px 0 0;
+		}
+
+		&-quantity {
+			font-size: 15px;
+			color: $border-color;
+			margin: 0;
+		}
+
+		&-price {
+			@include qodefMenuLevelOneInitialStyle();
+			color: #a2a2a2;
+			margin: 5px 0 0;
+		}
+
+		&-remove {
+			position: absolute;
+			top: -2px;
+			right: -3px;
+			font-size: 13px;
+			line-height: 1;
+		}
+	}
+
+	.touchevents & {
+		cursor: pointer;
+	}
+
+	&:hover {
+
+		.qodef-m-dropdown {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+/* ==========================================================================
+   WooCommerce DropDown Cart variable style start
+   ========================================================================== */
+
+@import '../../../../../../../../../../themes/emaurri/assets/css/scss/widgets-map';
+
+$local-widgets-area-map: (
+	'#qodef-page-sidebar': (
+		text-color: null,
+		link-color: null,
+		link-hover-color: null
+	),
+	'#qodef-top-area': (
+		text-color: $text-color,
+		link-color: $text-color,
+		link-hover-color: $main-color
+	),
+	'#qodef-page-header': (
+		thumbnail-width: 100,
+	)
+);
+
+$local-widgets-area-map-merged: non-destructive-map-merge($wp-widgets-area-map, $local-widgets-area-map);
+
+.qodef-woo-dropdown-cart {
+
+	@each $key, $values in $local-widgets-area-map-merged {
+		$wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+
+		.qodef-woo-dropdown-items {
+
+			#{$key} & {
+
+				@if (map-get($wp-widgets-map-merged, 'text-color') != null) {
+					color: map-get($wp-widgets-map-merged, 'text-color');
+				}
+
+				@if (map-get($wp-widgets-map-merged, 'link-color') != null) {
+					a {
+						color: map-get($wp-widgets-map-merged, 'link-color');
+					}
+				}
+
+				.qodef-woo-dropdown-item {
+					margin-top: #{map-get($wp-widgets-map-merged, 'list-item-with-thumbnail-bottom-margin')}px;
+
+					&:first-of-type {
+						margin-top: 0;
+					}
+				}
+
+				.qodef-e-image {
+					margin-right: 17px;
+					width: #{map-get($wp-widgets-map-merged, 'thumbnail-width')}px;
+				}
+
+				.qodef-m-order-details {
+
+					@if (map-get($wp-widgets-map-merged, 'text-color') != null) {
+						color: map-get($wp-widgets-map-merged, 'text-color');
+					}
+				}
+			}
+		}
+	}
+}

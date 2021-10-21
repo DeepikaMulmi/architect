@@ -1,0 +1,60 @@
+/* ==========================================================================
+	Portfolio Scrollable List Responsive style start
+   ========================================================================== */
+
+.qodef-portfolio-interactive-list {
+
+	@include qodefScreenSize1440 {
+
+		.qodef-ptf-meta-item {
+			table-layout: auto;
+		}
+
+		.qodef-ptf-meta-item-date-year{
+			padding-left: 18px;
+		}
+
+		.qodef-e-title {
+			width: 45%
+		}
+
+		.qodef-ptf-view-holder {
+			width: 24%;
+		}
+	}
+
+	@include qodefScreenSize1024 {
+		.qodef-ptf-list-showcase-preview-title-resp {
+			display: block;
+			padding-top: 5px;
+			margin-top: 21px;
+			margin-bottom: 70px;
+			@include qodefMetaStyle();
+
+			> a {
+				display: block;
+			}
+
+			.qodef-ptf-meta-item-date-year {
+				display: block;
+				padding: 10px 0;
+			}
+		}
+
+		.qodef-ptf-list-showcase-meta {
+			display: none;
+		}
+
+		.qodef-ptf-list-showcase-preview {
+			width: 100%;
+		}
+
+		.qodef-ptf-list-showcase-preview-item {
+			padding: 0 20px;
+		}
+
+		.qodef-ptf-list-showcase-preview-item a:after {
+			display: none;
+		}
+	}
+}

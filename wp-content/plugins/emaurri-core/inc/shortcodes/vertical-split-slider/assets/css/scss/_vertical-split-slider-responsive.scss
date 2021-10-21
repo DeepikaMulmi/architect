@@ -1,0 +1,86 @@
+.qodef-vertical-split-slider {
+	
+	@mixin responsive-common {
+		display: none;
+
+		+ .qodef-vertical-split-slider-responsive {
+			display: block;
+			
+			.qodef-m-slide {
+    
+				&-content,
+				&-image {
+					min-height: 50vh;
+				}
+				
+				&-content {
+					padding: 10%;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize1440 {
+		.qodef-m-image {
+			max-height: 70vh;
+			width: auto;
+		}
+	}
+	
+	@include qodefScreenSize1024 {
+  
+		&.qodef-disable-below--1024 {
+			@include responsive-common;
+		}
+	}
+	
+	@include qodefScreenSize768 {
+  
+		&.qodef-disable-below--768 {
+			@include responsive-common;
+		}
+	}
+}
+
+.qodef-vss-responsive {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.qodef-m-slide-image {
+		width: 100%;
+		min-height: 80vh;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.qodef-m-slide-content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 50px;
+		text-align: left;
+	}
+
+	.qodef-m {
+		&-title {
+			display: block;
+			margin: 19px 0 0;
+		}
+
+		&-subtitle {
+			display: block;
+			margin: 11px 0 0;
+
+			@include qodefMetaStyle($additional-meta-color);
+		}
+
+		&-button {
+			margin: 22px 0 0;
+		}
+	}
+
+	p.qodef-m-title {
+		@include qodefMetaStyle($line-height: 1.75em);
+	}
+}

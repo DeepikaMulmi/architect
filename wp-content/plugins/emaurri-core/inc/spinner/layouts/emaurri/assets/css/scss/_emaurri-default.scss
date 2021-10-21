@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+
+	&.qodef-layout--emaurri {
+
+		.qodef-m-emaurri {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			animation: qode-fade-in 1s .3s forwards;
+
+			.qodef-m-emaurri-text {
+				position: relative;
+				z-index: 12;
+
+				span {
+					font-size: 27px;
+					font-family: "Bebas Neue", sans-serif;
+					text-transform: uppercase;
+					color: $heading-color;
+					letter-spacing: 0.28em;
+					opacity: 0;
+					display: inline-block;
+					will-change: transform;
+					white-space: pre-wrap;
+				}
+			}
+		}
+	}
+}

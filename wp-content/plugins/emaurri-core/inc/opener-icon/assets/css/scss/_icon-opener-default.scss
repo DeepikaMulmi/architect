@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+		
+		&.qodef--close {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+		}
+	}
+	
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+		
+		* {
+			display: inline-block;
+			line-height: inherit;
+			
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+	}
+	
+	&.qodef-source--svg-path {
+		
+		span {
+			position: relative;
+			
+			> * {
+				vertical-align: middle;
+			}
+		}
+	}
+	
+	&.qodef-source--predefined {
+
+		&:hover,
+		&:focus {
+			color: initial;
+		}
+		
+		.qodef-m-lines {
+			position: relative;
+			display: block;
+			width: 45px;
+			height: 21px;
+			overflow: hidden;
+		}
+		
+		.qodef-m-line {
+			position: absolute;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: currentColor;
+			transition: all .3s ease-out;
+			transform: translateX(0);
+			
+			&.qodef--1 {
+				top: 0;
+				transition-delay: 0.2s;
+			}
+			
+			&.qodef--2 {
+				top: 10px;
+				transition-delay: 0.1s;
+			}
+
+			&.qodef--3 {
+				top: 20px;
+				transition-delay: 0s;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: currentColor;
+				transition: all .3s ease-out;
+				transform: translateX(-200%);
+				transform-origin: left;
+				transition-delay: 0s;
+			}
+		}
+
+		@media only screen and (min-width: 1025px) {
+			.qodef-m-icon:hover {
+
+				.qodef-m-lines {
+
+					.qodef-m-line {
+						transform: translateX(100%);
+
+						&:before {
+							transform: translateX(-100%);
+						}
+
+						&.qodef--1 {
+							transition-delay: 0s;
+
+							&:before {
+								transition-delay: .3s;
+							}
+						}
+
+						&.qodef--2 {
+							transition-delay: .1s;
+
+							&:before {
+								transition-delay: .4s;
+							}
+						}
+
+						&.qodef--3 {
+							transition-delay: .2s;
+
+							&:before {
+								transition-delay: .5s;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize1024 {
+			.qodef-m-lines {
+				width: 35px;
+				height: 19px;
+			}
+
+			.qodef-m-line {
+				&.qodef--2 {
+					top: 9px;
+				}
+
+				&.qodef--3 {
+					top: 18px;
+				}
+			}
+		}
+	}
+}

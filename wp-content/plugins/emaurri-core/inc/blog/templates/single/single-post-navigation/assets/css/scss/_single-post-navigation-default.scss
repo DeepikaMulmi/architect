@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 20px 0 87px;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		svg {
+			fill: currentColor;
+
+			stroke-dashoffset: 0;
+			stroke-dasharray: 35;
+			transition: .6s ease;
+
+			> g {
+
+				&:last-child {
+
+					> line {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 35;
+						transition: .6s ease;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			color: initial;
+
+			> svg {
+
+				> g {
+
+					&:last-child {
+
+						> line {
+							stroke-dashoffset: 70;
+
+							&:last-child {
+								transition-delay: .15s;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		.qodef-m-pagination-icon {
+			position: relative;
+			top: -2px;
+			display: block;
+			width: 30px;
+			height: auto;
+			fill: currentColor;
+			stroke: none;
+		}
+		
+		&.qodef--prev {
+			left: 0;
+
+			svg {
+				transform: scaleX(-1);
+			}
+			
+			.qodef-m-pagination-icon {
+				margin-right: 4px;
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+
+			svg {
+				transform: scaleX(1.01); //Fix blurriness
+			}
+			
+			.qodef-m-pagination-icon {
+				margin-left: 4px;
+			}
+		}
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefH7Style();
+	}
+}

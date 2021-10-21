@@ -1,0 +1,56 @@
+/* ==========================================================================
+   #Content bottom styles - start
+   ========================================================================== */
+
+#qodef-page-content-side {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 135px;
+	height: 100%;
+	z-index: 99;
+
+	&.cs-on-right.cs-has-border {
+		border-left: 1px solid $additional-border-color;
+	}
+
+	&.cs-on-left {
+		right: auto;
+		left: 0;
+
+		&.cs-has-border {
+			border-right: 1px solid $additional-border-color;
+		}
+	}
+
+	#qodef-page-content-side-inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: rotate(-90deg) translate3d(-50%, -50%, 0);
+		transform-origin: top left;
+		white-space: nowrap;
+
+		&.off{
+			opacity: 0;
+			visibility: hidden;
+
+			transition: opacity .15s ease,visibility 0s .15s;
+		}
+
+		&.on{
+			opacity: 1;
+			visibility: visible;
+
+			transition: opacity .3s ease;
+		}
+	}
+
+	@include qodefScreenSize1024 {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   #Content bottom - end
+   ========================================================================== */

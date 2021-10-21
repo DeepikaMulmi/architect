@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Swapping image gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-swapping-image-gallery {
+	position:relative;
+	overflow: hidden;
+	display: flex;
+	align-items: flex-start;
+	
+	.qodef-m-info {
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+	
+	.qodef-m-image-holder {
+		flex-grow: 1;
+		flex-basis: 0;
+		overflow: hidden;
+		box-shadow: 0 0 10.53px 2.47px rgba(2, 2, 2, 0.04);
+	}
+	
+	.qodef-m-info {
+		padding-top: 60px;
+	}
+	
+	.qodef-m-headline {
+		margin: 0 0 60px;
+	}
+	
+	.qodef-m-title {
+		margin: 0 0 24px;
+	}
+	
+	.qodef-m-description {
+		margin: 0;
+	}
+	
+	.qodef-m-thumbnails-holder {
+		
+		.swiper-pagination-custom {
+			width: auto;
+		}
+		
+		.qodef-m-thumbnail {
+			font-size: 0;
+			cursor: pointer;
+			opacity: 0.35;
+			transition: opacity .3s ease-out;
+			
+			img {
+				display: block;
+			}
+			
+			&.qodef--active {
+				opacity: 1;
+			}
+		}
+	}
+	
+	&.qodef-info-position--right {
+		
+		.qodef-m-info {
+			padding-left: 120px;
+		}
+	}
+	
+	&.qodef-info-position--left {
+		
+		.qodef-m-info {
+			padding-right: 120px;
+		}
+	}
+}
+/* ==========================================================================
+   Swapping image gallery shortcode style - end
+   ========================================================================== */

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Blog List Metro styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--metro {
+		
+		@include qodefScreenSize1440 {
+			
+			article {
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						padding: 83px 40px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						padding: 83px 40px 87px;
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize1024 {
+
+			&.qodef-col-num--1 {
+				.qodef-e-media-image {
+					img {
+						max-width: inherit;
+						height: 70vh;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+	}
+}

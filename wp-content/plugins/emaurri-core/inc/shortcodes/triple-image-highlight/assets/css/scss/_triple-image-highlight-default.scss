@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Triple Image Highlight shortcode styles
+   ========================================================================== */
+
+.qodef-triple-image-highlight {
+	position: relative;
+	text-align: center;
+	
+	.qodef-e-inner {
+		position: relative;
+		display: inline-block;
+		max-width: 82%;
+		
+		@include qodefScreenSize680{
+			max-width: 100%;
+		}
+	}
+	
+	.qodef-e-image-holder {
+		position: relative;
+		max-width: 45vw;
+		will-change: transform;
+		
+		.qodef-e-link {
+			@include qodefAbsoluteLayout();
+			z-index: 40;
+		}
+		
+		&.qodef--center {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			transform: scale(.7);
+			transition: transform .7s cubic-bezier(0.86, 0, 0.07, 1);
+		}
+		
+		&.qodef--left,
+		&.qodef--right {
+			@include qodefAbsoluteLayout();
+			visibility: hidden;
+			transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) .5s, transform-origin 0s cubic-bezier(0.19, 1, 0.22, 1) 0s, visibility .0s .6s;
+		}
+		img {
+			position: relative;
+			display: block;
+			z-index: 10;
+			border: 1px solid #e0e0e0;
+		}
+	}
+
+	%trigger {
+		position: absolute;
+		top: 0;
+		width: 15%;
+		height: 100%;
+		z-index: 300;
+		cursor: pointer;
+	}
+	
+	.qodef-left-trigger {
+		@extend %trigger;
+		left: 0%;
+	}
+	
+	.qodef-right-trigger {
+		@extend %trigger;
+		right: 0%;
+	}
+
+	.qodef-left-arrow,
+	.qodef-right-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+
+		> svg {
+			display: block;
+			width: 30px;
+			height: 39px;
+			fill: none;
+			stroke: currentColor;
+			stroke-miterlimit: 10;
+			stroke-dashoffset: 0;
+			stroke-dasharray: 35;
+			transition: .6s ease;
+
+			> g {
+
+				&:last-child {
+
+					> line {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 35;
+						transition: .6s ease;
+					}
+				}
+			}
+		}
+
+		&:hover {
+
+			> svg {
+
+				> g {
+
+					&:last-child {
+
+						> line {
+							stroke-dashoffset: 70;
+
+							&:last-child {
+								transition-delay: .15s;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-left-arrow {
+		left: -128px;
+
+		svg {
+			transform: scaleX(-1);
+		}
+	}
+
+	.qodef-right-arrow {
+		right: -128px
+	}
+}

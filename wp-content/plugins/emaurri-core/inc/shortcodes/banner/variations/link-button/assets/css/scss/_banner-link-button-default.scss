@@ -1,0 +1,24 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-button {
+		
+		.qodef-m-content-inner {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: 35px;
+		}
+		
+		.qodef-m-title {
+			margin: 10px 0;
+		}
+		
+		.qodef-m-text {
+			margin: 0;
+		}
+		
+		.qodef-m-button {
+			margin: 10px 0 0;
+		}
+	}
+}

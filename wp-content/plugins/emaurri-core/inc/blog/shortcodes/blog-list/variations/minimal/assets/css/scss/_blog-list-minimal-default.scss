@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Blog List Minimal styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--minimal {
+		
+		article {
+			
+			.qodef-e-info {
+				
+				&.qodef-info--bottom {
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+}

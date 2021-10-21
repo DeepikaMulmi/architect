@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Full Screen Menu styles
+   ========================================================================== */
+
+#qodef-fullscreen-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fbfbfb;
+	overflow-x: hidden !important;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 99; /* smaller than header, bigger than content */
+	
+	.qodef-content-grid {
+		height: 100%;
+		
+		.qodef-fullscreen-menu {
+			width: 100%;
+		}
+	}
+	
+	.qodef-fullscreen-menu-animate--in & {
+		animation: qode-fade-in .25s linear both;
+	}
+	
+	.qodef-fullscreen-menu-animate--out & {
+		animation: qode-fade-out .25s linear both;
+	}
+
+	@media only screen and (min-width: 1025px) {
+		z-index: 101;
+	}
+
+	.qodef-fullscreen-menu-overlay-close-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: none;
+
+		@include qodefScreenSize1024 {
+			display: none;
+		}
+	}
+}
+
+#qodef-fullscreen-area-inner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin-left: 16vw
+}
+
+$menu-top-bottom-spacing: 13px 0 1px;
+$menu-level-two-left-spacing: 20px;
+
+.qodef-fullscreen-menu {
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+	text-align: left;
+	z-index: 12;
+	pointer-events: none;
+	
+	ul {
+		margin: 0;
+		padding: 30px;
+		list-style: none;
+		display: inline-block;
+		pointer-events: all;
+		position: relative;
+		left: -30px;
+		
+		li {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+			a {
+				
+				.qodef-menu-item-arrow {
+					display: none;
+				}
+			}
+			
+			&.qodef--hide-link {
+				
+				> a {
+					cursor: default;
+				}
+			}
+		}
+		
+		&.sub-menu {
+			display: none;
+		}
+	}
+	
+	.qodef-menu-item-icon {
+		margin-right: 5px;
+	}
+	
+	.qodef-mega-menu-widget-holder {
+		display: none;
+	}
+	
+	> ul {
+		
+		> li {
+			margin: 14px 0;
+			
+			> a {
+				@include qodefMetaStyle($font-size: 16px);
+
+				.qodef-menu-item-text {
+					position: relative;
+
+					&:after {
+						content: '';
+						display: block;
+						width: 100%;
+						height: 1px;
+						background-color: currentColor;
+						position: absolute;
+						left: 0;
+						bottom: -5px;
+						transform: scaleX(0);
+						transform-origin: right;
+						transition: transform .2s ease-out;
+					}
+				}
+				
+				&:hover {
+					@include qodefMenuLevelOneHoverStyle();
+
+					.qodef-menu-item-text {
+
+						&:after {
+							transform: scaleX(1);
+							transform-origin: left;
+						}
+					}
+				}
+			}
+			
+			&.current-menu-ancestor,
+			&.current-menu-item {
+				
+				> a {
+					@include qodefMenuLevelOneHoverStyle();
+
+					.qodef-menu-item-text {
+
+						&:after {
+							transform: scaleX(1);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-drop-down-second-inner {
+		
+		> ul {
+			padding: 13px 0 1px 30px;
+		}
+		
+		ul {
+			
+			li {
+				
+				> a {
+					@include qodefMenuLevelTwoInitialStyle();
+					@include qodefParagraphStyle($color: $grey-links-color, $font-size: 15px, $line-height: 1.867em);
+					margin: 9px 0;
+					
+					&:hover {
+						@include qodefMenuLevelTwoHoverStyle();
+					}
+				}
+				
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					
+					> a {
+						@include qodefMenuLevelTwoHoverStyle();
+					}
+				}
+			}
+		}
+	}
+}
+
+.qodef-fs-close-cursor {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 -25px;
+	line-height: 88px;
+	text-align: center;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 123;
+	color: $heading-color;
+
+	&.qodef--active {
+
+		.qodef-m-lines .qodef-m-line {
+
+			&.qodef--1 {
+				clip-path: inset(0 0 0 0);
+			}
+
+			&.qodef--2 {
+				clip-path: inset(0 0 0 0);
+			}
+		}
+	}
+
+	.qodef-m-lines {
+		position: relative;
+		display: block;
+		width: 55px;
+		height: 13px;
+
+		.qodef-m-line {
+			position: absolute;
+			left: 0;
+			height: 1px;
+			background-color: currentColor;
+			transition: .5s cubic-bezier(0.96, 0.15, 0, 1.1);
+
+			&.qodef--1 {
+				top: 2px;
+				width: 100%;
+				transform: rotate(45deg);
+				clip-path: inset(0 100% 0 0);
+				transition-delay: .2s;
+			}
+
+			&.qodef--2 {
+				top: 2px;
+				right: 0;
+				left: auto;
+				width: 100%;
+				transform: rotate(-45deg);
+				clip-path: inset(0 0 0 100%);
+			}
+
+			&.qodef--3 {
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include qodefScreenSize1024 {
+		display: none;
+	}
+}

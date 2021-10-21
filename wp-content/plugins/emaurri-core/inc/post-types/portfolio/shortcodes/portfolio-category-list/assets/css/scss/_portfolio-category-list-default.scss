@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Portfolio Category List shortcode style - begin
+   ========================================================================== */
+
+.qodef-portfolio-category-list {
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-e-image {
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.qodef-e-content {
+		
+		a {
+			position: relative;
+			z-index: 1;
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+	
+	.qodef-e-description {
+		margin: 9px 0 0;
+	}
+	
+	.qodef-e-link {
+		@include qodefAbsoluteLayout();
+	}
+}

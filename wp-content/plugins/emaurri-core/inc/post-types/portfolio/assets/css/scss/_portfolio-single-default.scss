@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	@include qodefRelativeLayout();
+
+	.qodef-media {
+
+		iframe {
+			max-height: calc(56.25vw);
+		}
+	}
+
+	.qodef-e-content {
+		h2 {
+			margin-bottom: 15px;
+		}
+	}
+
+	.qodef-portfolio-info {
+
+		> * {
+			display: flex;
+			align-items: flex-start;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.qodef-e-title {
+			margin: 0 20px 4px 0;
+			color: #121212;
+		}
+
+		p, a {
+			margin: 0;
+			color: #4e4e4e;
+		}
+
+		.qodef-e-category,
+		.qodef-e-tag {
+			position: relative;
+
+			&:after {
+				content: ",";
+				position: relative;
+				right: 3px;
+			}
+
+			&:last-child:after {
+				display: none;
+			}
+
+			&:hover {
+				color: $grey-links-color;
+			}
+		}
+
+		.qodef-info--social-share {
+			margin-top: 27px;
+
+			.qodef-social-share  {
+
+				&.qodef-layout--text ul.qodef-shortcode-list {
+					letter-spacing: .15em;
+				}
+
+				li {
+					vertical-align: baseline;
+				}
+			}
+		}
+	}
+
+	.qodef-variations--small {
+
+		.qodef-media {
+			margin-right: 15px;
+		}
+
+		.qodef-e-content {
+			h2 {
+				margin-top: 0;
+			}
+		}
+
+		.qodef-portfolio-info {
+			margin-top: 32px;
+		}
+	}
+
+	.qodef-variations--big {
+
+		.qodef-e-content {
+			margin-top: 11px;
+		}
+
+		.qodef-portfolio-info {
+			margin-top: 38px;
+			padding-left: 95px;
+		}
+	}
+}

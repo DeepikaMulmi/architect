@@ -1,0 +1,58 @@
+/* ==========================================================================
+Crossfade Images shortcode styles - start
+========================================================================== */
+
+.qodef-crossfade-images {
+	display: inline-block;
+	position: relative;
+	max-width: 100%;
+
+	.qodef-m-link {
+		@include qodefAbsoluteLayout();
+		z-index: 100;
+	}
+
+	.qodef-m-image-holder {
+		transition: all .5s;
+		
+		.qodef-m-image-holder-inner {
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.qodef-m-initial-image {
+			vertical-align: middle;
+			transition: opacity .5s ease;
+		}
+
+		.qodef-m-hover-image {
+			@include qodefAbsoluteLayout();
+			z-index: 10;
+			opacity: 0;
+			transition: all .5s ease;
+		}
+	}
+
+	.qodef-m-title-holder {
+		text-align: center;
+
+		.qodef-m-title {
+			margin: 28px 0;
+		}
+	}
+
+	&:hover {
+
+		.qodef-m-image-holder {
+
+			.qodef-m-initial-image {
+				opacity: 0;
+			}
+
+			.qodef-m-hover-image {
+				opacity: 1;
+				transition: opacity .5s .05s;
+			}
+		}
+	}
+}

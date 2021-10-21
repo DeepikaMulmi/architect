@@ -1,0 +1,2 @@
+2021-09-22T03:38:41+00:00 CRITICAL Out of memory (allocated 37748736) (tried to allocate 159744 bytes) in D:\xampp\htdocs\architect\wp-content\plugins\revslider\includes\data.class.php on line 148
+

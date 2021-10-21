@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Social Share shortcode responsive styles
+   ========================================================================== */
+
+.qodef-social-share {
+	
+	@include qodefScreenSize680 {
+		$socialShareWidth: 90px;
+	
+		&.qodef-layout--dropdown {
+			
+			&.qodef-dropdown--right {
+				
+				.qodef-social-share-dropdown {
+					
+					li {
+						
+						@for $i from 1 through 7 {
+							&:nth-child(#{$i}) {
+								left: #{($i - 1)*(($socialShareWidth / 2)) + 1};
+							}
+						}
+					}
+				}
+			}
+			
+			&.qodef-dropdown--left {
+				
+				.qodef-social-share-dropdown {
+					left: auto;
+					right: 0;
+					
+					li {
+						
+						@for $i from 1 through 7 {
+							&:nth-child(#{$i}) {
+								right: auto;
+								left: #{($i - 1)*(($socialShareWidth / 2)) + 1};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode responsive styles
+   ========================================================================== */

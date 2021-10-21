@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Vertical Sliding layout responsive styles
+   ========================================================================== */
+
+@include qodefScreenSize1024 {
+    .qodef-header--vertical-sliding {
+        #qodef-page-header-inner {
+            display: none;
+        }
+
+        #qodef-page-outer,
+        footer {
+            padding-left: 0;
+        }
+    }
+}

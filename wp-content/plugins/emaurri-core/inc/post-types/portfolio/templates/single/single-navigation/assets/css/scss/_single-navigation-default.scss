@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+	@include qodefRelativeLayout();
+	margin: 82px 0 33px;
+
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		&.qodef--prev {
+			
+			svg {
+				transform: scaleX(-1);
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			text-align: right;
+			margin-left: auto;
+			
+			.qodef-m-nav-icon {
+				margin-left: 5px;
+			}
+		}
+		
+		&.qodef--back-link {
+			position: absolute;
+			top: 8px;
+			left: 50%;
+			border: 1px solid $additional-border-color;
+			width: 23px;
+			height: 23px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: translateX(-50%);
+
+			&:after {
+				content: '';
+				width: 7px;
+				height: 7px;
+				background-color: #707070;
+				border-radius: 50%;
+			}
+		}
+
+		> svg {
+			stroke-dashoffset: 0;
+			stroke-dasharray: 35;
+			transition: .6s ease;
+
+			> g {
+
+				&:last-child {
+
+					> line {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 35;
+						transition: .6s ease;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			color: initial;
+
+			> svg {
+
+				> g {
+
+					&:last-child {
+
+						> line {
+							stroke-dashoffset: 70;
+
+							&:last-child {
+								transition-delay: .15s;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:focus {
+			color: initial;
+		}
+	}
+	
+	.qodef-m-nav-icon {
+		font-size: 30px;
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefHeadingStyle(h6, false);
+	}
+}

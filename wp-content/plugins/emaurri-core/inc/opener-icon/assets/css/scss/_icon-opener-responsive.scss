@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Opener icon styles - responsive
+   ========================================================================== */
+@include qodefScreenSize1024 {
+
+	.qodef-opener-icon {
+
+		&.qodef-source--predefined {
+
+			.qodef-m-line {
+
+				&, *,
+				&.qodef--1,
+				&.qodef--2,
+				&.qodef--3 {
+					transition-delay: 0s;
+				}
+			}
+
+			.qodef--close .qodef-m-line {
+				transition-duration: 0s;
+			}
+		}
+	}
+}

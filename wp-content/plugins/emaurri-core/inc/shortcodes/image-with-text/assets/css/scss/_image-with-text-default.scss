@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		@include qodefCorners();
+		border: 1px solid #e1e1e1;
+		
+		a, img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-m-title {
+		margin: 21px 0 0;
+	}
+	
+	.qodef-m-text {
+		margin: 15px 0 0;
+	}
+
+	.qodef-m-image-border-line {
+		position: absolute;
+		transition: transform .35s ease-out;
+
+		background-color: #a6a6a6;
+
+		&.qodef-image-border-line {
+
+			&--top {
+				left: -1px;
+				top: -1px;
+				height: 1px;
+				width: calc(100% + 2px);
+				transform: scaleX(0);
+				transform-origin: left center;
+			}
+
+			&--right {
+				right: -1px;
+				bottom: -1px;
+				width: 1px;
+				height: calc(100% + 2px);
+				transform: scaleY(0);
+				transform-origin: center bottom;
+			}
+
+			&--bottom {
+				right: -1px;
+				bottom: -1px;
+				height: 1px;
+				width: calc(100% + 2px);
+				transform: scaleX(0);
+				transform-origin: right center;
+			}
+
+			&--left {
+				left: -1px;
+				top: -1px;
+				width: 1px;
+				height: calc(100% + 2px);
+				transform: scaleY(0);
+				transform-origin: center top;
+			}
+		}
+	}
+
+	&:hover {
+
+		.qodef-m-image-border-line {
+
+			&.qodef-image-border-line {
+
+				&--top,
+				&--bottom {
+					transform: scaleX(1);
+				}
+
+				&--right,
+				&--left {
+					transform: scaleY(1);
+				}
+			}
+		}
+	}
+}

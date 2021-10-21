@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Mobile Logo styles
+   ========================================================================== */
+
+#qodef-page-mobile-header {
+	
+	.qodef-header-logo-image.qodef--customizer {
+		max-height: 100%;
+		width: auto;
+		margin-right: auto;
+	}
+	
+	.qodef-mobile-header-logo-link {
+		
+		img {
+			
+			&.qodef--main {
+				opacity: 1;
+			}
+			
+			&.qodef--dark,
+			&.qodef--light {
+				opacity: 0;
+			}
+			
+			&:not(.qodef--main) {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

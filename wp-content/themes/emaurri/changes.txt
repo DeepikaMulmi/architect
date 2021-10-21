@@ -1,0 +1,20 @@
+1.2
+- Added WordPress 5.7.2 compatibility
+- Added WooCommerce 5.3.0 compatibility
+- Added Choose Slide Animation option for Slider shortcodes
+- Updated Emaurri Core plugin to 1.1
+- Updated Qode Framework plugin to 1.1.5
+- Fixed custom class excluding for shortcodes
+- Fixed tgma PHP 8 compatibility
+- Improved theme registration - code already used case
+- Improved theme registration to block Shortcodes and CPT loading if the theme is not registered
+
+1.1
+- Added compatibility with Qi Addons for Elementor plugin
+- Added WordPress 5.7.1 compatibility
+- Added WooCommerce 5.2.2 compatibility
+- Updated Revolution Slider plugin to 6.4.11
+
+1.0.1
+- Fixed fatal error when Core enabled
+- Fixed mobile bug with Portfolio Fullscreen

@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Portfolio Category List shortcode variation style - begin
+   ========================================================================== */
+
+.qodef-portfolio-category-list {
+	
+	&.qodef-layout--gallery {
+		
+		.qodef-e-inner {
+			
+			&:hover {
+				
+				.qodef-e-content {
+					opacity: 1;
+				}
+			}
+		}
+		
+		.qodef-e-content {
+			@include qodefAbsoluteLayout();
+			padding: 31px 40px;
+			background-color: rgba($heading-color, .4);
+			opacity: 0;
+			transition: $opacity-transition;
+		}
+		
+		.qodef-e-title,
+		.qodef-e-description {
+			color: #fff;
+		}
+	}
+}

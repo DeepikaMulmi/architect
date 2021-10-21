@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Counter shortcode styles
+   ========================================================================== */
+
+.qodef-counter.qodef-layout--simple {
+	text-align: center;
+
+	.qodef-m-digit {
+		font-family: $meta-font;
+		font-weight: 600;
+		font-size: 100px;
+		line-height: 0.72em;
+		letter-spacing: .025em;
+		color: #ebebeb;
+	}
+
+	.qodef-m-title {
+		margin: 20px 0 0 0;
+	}
+
+	.qodef-m-text {
+		margin: 21px 0 0 0;
+		@include qodefMetaStyle();
+	}
+
+	&.qodef-spearator--on {
+
+		.qodef-m-digit-wrapper {
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				height: 100%;
+				width: 1px;
+				position: absolute;
+				top: -3%;
+				right: 0;
+				background-color: #ebebeb;
+			}
+		}
+
+		&.qodef-spearator-hide-on-tablet {
+			@include qodefScreenSize1024 {
+				.qodef-m-digit-wrapper:after {
+					display: none;
+				}
+			}
+		}
+
+		&.qodef-spearator-hide-on-phone {
+			@include qodefScreenSize680 {
+				.qodef-m-digit-wrapper:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

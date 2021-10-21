@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Image Marquee shortcode styles
+   ========================================================================== */
+
+.qodef-image-marquee {
+	@include qodefRelativeLayout();
+
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		margin: 0 auto;
+		overflow: hidden;
+
+		&.qodef--mobile {
+			display: none;
+
+			.qodef-m-image {
+				background-size: cover !important;
+			}
+		}
+	}
+
+	.qodef-m-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+
+		&.qodef-image--copy {
+			will-change: transform;
+			backface-visibility: hidden;
+			transform: translateX(100%) translateZ(0);
+		}
+
+		a {
+			position: relative;
+			display: block;
+		}
+	}
+}
+
+@keyframes qode-move-marquee {
+	0% {
+		transform: translateX(0%) translateZ(0);
+	}
+	100% {
+		transform: translateX(-100%) translateZ(0);
+	}
+}
+
+@keyframes qode-move-marquee-copy {
+	0% {
+		transform: translateX(100%) translateZ(0);
+	}
+	100% {
+		transform: translateX(0%) translateZ(0);
+	}
+}

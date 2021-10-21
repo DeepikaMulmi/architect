@@ -1,0 +1,67 @@
+/* ==========================================================================
+# Logo default style
+========================================================================== */
+
+#qodef-page-header {
+
+    .qodef-header-logo-link {
+
+        img {
+
+            &.qodef--main {
+                opacity: 1;
+            }
+    
+            &.qodef--dark,
+            &.qodef--light {
+                opacity: 0;
+            }
+    
+            &:not(.qodef--main):not(.qodef--sticky) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+#qodef-page-header-inner {
+    
+    &.qodef-skin--light {
+    
+        .qodef-header-logo-link {
+        
+            img {
+    
+                &.qodef--dark,
+                &.qodef--main {
+                    opacity: 0;
+                }
+    
+                &.qodef--light {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    &.qodef-skin--dark {
+    
+        .qodef-header-logo-link {
+        
+            img {
+            
+                &.qodef--light,
+                &.qodef--main {
+                    opacity: 0;
+                }
+            
+                &.qodef--dark {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

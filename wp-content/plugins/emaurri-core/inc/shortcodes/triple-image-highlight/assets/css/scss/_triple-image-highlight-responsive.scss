@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Triple Image Highlight shortcode styles
+   ========================================================================== */
+
+.qodef-triple-image-highlight {
+
+	@include qodefScreenSize1440 {
+
+		.qodef-left-arrow {
+			left: -78px;
+		}
+
+		.qodef-right-arrow {
+			right: -78px
+		}
+	}
+
+	@include qodefScreenSize1024 {
+
+		.qodef-left-arrow {
+			left: -58px;
+		}
+
+		.qodef-right-arrow {
+			right: -58px
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		.qodef-e-image-holder {
+			max-width: 75vw
+		}
+
+		.qodef-left-arrow,
+		.qodef-right-arrow {
+			display: none
+		}
+	}
+}

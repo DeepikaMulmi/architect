@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Banner shortcode styles
+   ========================================================================== */
+
+.qodef-banner {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-banner-link {
+		@include qodefAbsoluteLayout();
+		display: block;
+		z-index: 1;
+	}
+	
+	.qodef-m-content {
+		@include qodefAbsoluteLayout();
+		display: block;
+	}
+	
+	.qodef-m-content-inner {
+		@include qodefAbsoluteLayout();
+		display: flex;
+	}
+	
+	.qodef-m-title {
+		margin: 10px 0 4px;
+	}
+	
+	.qodef-m-title-inner {
+		display: inline-block;
+	}
+	
+	.qodef-m-subtitle {
+		font-family: $heading-font;
+		margin: 0;
+		opacity: .5;
+		letter-spacing: 0;
+	}
+	
+	.qodef-m-text-field {
+		font-size: 15px;
+		color: $main-color;
+		margin: 0 0 10px;
+		font-style: italic;
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		overflow: hidden;
+		
+		img {
+			display: block;
+			transition: all .35s ease-out;
+		}
+	}
+}

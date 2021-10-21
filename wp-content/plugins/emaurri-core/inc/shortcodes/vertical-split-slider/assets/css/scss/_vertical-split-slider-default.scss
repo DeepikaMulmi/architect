@@ -1,0 +1,180 @@
+.qodef-vertical-split-slider {
+    height: 100vh;
+    position: relative;
+    
+    .ms-tableCell {
+        height: 100vh !important; // to override inline from js and make sure it will be full height
+
+        @include qodefScreenSize1366 {
+
+            .qodef-portfolio-list {
+                img {
+                    max-height: 65vh;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.qodef-vertical-split-slider-responsive {
+    display: none;
+}
+
+.qodef-vertical-split-slider,
+.qodef-vertical-split-slider-responsive {
+    
+    .qodef-m {
+
+        &-slide-content-holder {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .qodef-m-slide-image-wrapper {
+                overflow: hidden;
+                width: auto;
+            }
+
+            &:hover {
+                .qodef-m-image {
+                    transform: scale(1.03);
+                }
+            }
+        }
+
+        &-image {
+            transform: scaleX(1.001);
+            transition: transform .5s ease;
+        }
+
+        &-title {
+            display: block;
+            margin: 19px 0 0;
+        }
+
+        &-subtitle {
+            display: block;
+            margin: 7px 0 0;
+
+            @include qodefMetaStyle($additional-meta-color);
+        }
+
+        &-text {
+            margin: 15px 0 0 0;
+        }
+
+        &-button {
+            margin: 22px 0 0 0;
+        }
+    
+        &-slide {
+        
+            &-image {
+                background-size: cover;
+            }
+        
+            &-content {
+                text-align: center;
+                padding: 0 5%;
+            }
+        }
+    }
+
+    p.qodef-m-title {
+        @include qodefMetaStyle();
+    }
+}
+
+#multiscroll-nav {
+    display: none;
+    
+    li {
+        margin: 16px 0 !important;
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    a {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+
+        span {
+            position: relative;
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border-radius: 100%;
+            opacity: 1;
+            border: 1px solid #000;
+            z-index: 1;
+            top:0; // Override defaults
+            left:0;
+            transition: all 0.9s ease-in-out;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: $border-color;
+            z-index: 0;
+            opacity: 0;
+            transition: all 0.9s ease-in-out;
+        }
+
+        &:before {
+            width: 40px;
+            height: 1px;
+        }
+
+        &:after {
+            width: 1px;
+            height: 40px;
+        }
+
+        &.active {
+            border-color: $border-color;
+
+            span {
+                background-color: #000;
+            }
+
+            &:before,
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    
+    &.right {
+        right: 39px !important;
+    }
+    
+    .qodef-vertical-split-slider--initialized & {
+        display: block;
+    
+        $skins: ('light', 'dark');
+        $skins-color: ('#fff', '#000');
+        
+        @each $skin in $skins {
+    
+            &.qodef-skin--#{$skin} {
+    
+                a:not(.active) {
+        
+                    span {
+                        background-color: #{nth($skins-color, index($skins, $skin))};
+                    }
+                }
+            }
+        }
+    }
+}

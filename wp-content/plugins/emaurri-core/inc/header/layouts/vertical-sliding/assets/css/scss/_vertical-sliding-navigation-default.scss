@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Vertical Sliding navigation style
+   ========================================================================== */
+
+$menu-top-bottom-spacing: 19px 0 1px;
+$menu-level-two-left-spacing: 20px;
+
+.qodef-header--vertical-sliding {
+    
+    .qodef-header-vertical-sliding-navigation {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 115px;
+        width: 100%;
+        z-index: 100;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+                padding: 0;
+                position: relative;
+
+                .qodef-menu-item-text {
+                    display: inline-flex;
+                    align-items: center;
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin-top: -3px
+                    }
+                }
+
+                .qodef-drop-down-second {
+                    transform: translateZ(0);
+                }
+
+                .qodef-drop-down-second-inner {
+                    display: block;
+                    padding: 0;
+                    position: relative;
+                    z-index: 997;
+                }
+
+                &.qodef--hide-link {
+                    
+                    > a {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        .qodef-menu-item-icon {
+            margin-right: 5px;
+        }
+
+        .qodef-mega-menu-widget-holder {
+            display: none;
+        }
+    
+        > ul {
+            
+            > li {
+                margin: 11px 0;
+                
+                > a {
+                    @include qodefMetaStyle($font-size: 16px);
+
+                    .qodef-menu-item-text {
+                        position: relative;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 1px;
+                            background-color: currentColor;
+                            position: absolute;
+                            left: 0;
+                            bottom: -5px;
+                            transform: scaleX(0);
+                            transform-origin: right;
+                            transition: transform .2s ease-out;
+                        }
+                    }
+                
+                    &:hover {
+                        @include qodefMenuLevelOneHoverStyle();
+
+                        .qodef-menu-item-text {
+
+                            &:after {
+                                transform: scaleX(1);
+                                transform-origin: left;
+                            }
+                        }
+                    }
+
+                    .qodef-menu-item-arrow {
+                        display: none;
+                    }
+                }
+
+                &.current-menu-ancestor,
+                &.current-menu-item {
+
+                    > a {
+                        @include qodefMenuLevelOneHoverStyle();
+
+                        .qodef-menu-item-text {
+
+                            &:after {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            
+                .qodef-drop-down-second-inner {
+                    
+                    > ul {
+                        padding: $menu-top-bottom-spacing;
+                    }
+                
+                    ul {
+                    
+                        li {
+                        
+                            > a {
+                                @include qodefMenuLevelTwoInitialStyle();
+                                @include qodefParagraphStyle($color: $grey-links-color, $font-size: 15px, $line-height: 1.867em);
+                            }
+                        
+                            &:hover,
+                            &.current-menu-ancestor,
+                            &.current-menu-item {
+                                > a {
+                                    @include qodefMenuLevelTwoHoverStyle($color: #111);
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                &.current-menu-ancestor,
+                &.current-menu-item {
+                    
+                    > a {
+                        @include qodefMenuLevelOneHoverStyle();
+                    }
+                }
+            }
+        }
+
+        &.qodef-vertical-sliding-drop-down--below {
+            
+            ul li {
+                
+                .qodef-drop-down-second {
+                    display: none;
+                }
+            }
+        }
+
+        &.qodef-vertical-sliding-drop-down--side {
+            
+            .qodef-drop-down-second {
+                position: absolute;
+                top: 0;
+                width: 100%;
+
+                ul {
+                    background-color: #fff;
+                    left: calc(100% + 40px); //because of the padding right
+                    margin-left: 50px;
+                    opacity: 0;
+                    padding: 25px 20px;
+                    position: absolute;
+                    top: -23px;
+                    transition: all $transition-timing;
+                    visibility: hidden;
+                    width: 254px;
+
+                    &.qodef-float--open {
+                        margin-left: 0;
+                        opacity: 1;
+                        visibility: visible;
+                        z-index: 900;
+                    }
+
+                    ul {
+                        left: calc(100% + 20px); //because of the padding right
+                        top: -25px; //because of the padding top
+                        transition: all .2s ease;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

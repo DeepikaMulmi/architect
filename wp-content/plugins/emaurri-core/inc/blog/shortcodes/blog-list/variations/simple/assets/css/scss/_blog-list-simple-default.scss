@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--simple {
+		
+		article {
+			
+			.qodef-e-inner {
+				display: flex;
+				align-items: center;
+			}
+
+			p.qodef-e-title {
+				@include qodefMetaStyle($line-height: 1.7em);
+
+				a {
+					.widget & {
+						color: inherit !important;
+					}
+				}
+
+				@media (min-width: 1025px) and (max-width: 1599px) {
+					font-size: 10px
+				}
+			}
+			
+			.qodef-e-media-image {
+				flex-shrink: 0;
+				width: 120px;
+				margin: 0 20px 0 0;
+
+				@media (min-width: 1025px) and (max-width: 1599px) {
+					width: 100px;
+				}
+			}
+			
+			.qodef-e-info {
+				
+				&.qodef-info--bottom {
+					margin-top: 5px;
+					@include qodefMetaStyle($additional-meta-color);
+
+					@media (min-width: 1025px) and (max-width: 1599px) {
+						font-size: 10px
+					}
+
+					a {
+						color: $additional-meta-color;
+
+						.widget & {
+							color:  $additional-meta-color !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

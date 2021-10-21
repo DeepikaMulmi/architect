@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Product List Info on Image styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+	
+	&.qodef-item-layout--info-on-image {
+		
+		.qodef-woo-product-inner {
+			
+			.added_to_cart,
+			.button {
+				margin-top: 20px !important; // to override default list selector with id
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Icon With Text shortcode styles
+   ========================================================================== */
+
+.qodef-icon-with-text {
+	&.qodef-layout--top {
+		
+		&.qodef-alignment--center {
+			text-align: center;
+		}
+		
+		&.qodef-alignment--left {
+			text-align: left;
+		}
+		
+		&.qodef-alignment--right {
+			text-align: right;
+		}
+		
+		.qodef-m-title {
+			margin-top: 21px;
+		}
+	}
+}
